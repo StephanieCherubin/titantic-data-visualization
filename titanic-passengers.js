@@ -7,13 +7,11 @@ fetch('titanic-passengers.json')
 
 function handleData(data) {
   const fields = data.map(passenger => passenger.fields)
-  if (fields === undefined) {
-    return None
-  }
-  console.log(fields[0].name)
-  console.log(fields[0].fare)
-  console.log(fields[0].pclass)
-  console.log(fields[0].survived)
+
+  console.log(`The name of the first passenger is ${fields[0].name}`)
+  console.log(`The fare of the first passenger is ${fields[0].fare}`)
+  console.log(`The first passenger was a part of the ${fields[0].pclass} class.`)
+  console.log(`Did the first passenger survive? ${fields[0].survived}`)
   console.log(fields[0].age) // returns undefined
   totalAmount(fields)
   survivorCount(fields)
@@ -39,8 +37,10 @@ function survivorCount(data) {
 }
 
 
-// function age(data) {
-//   data.filter(passenger => passenger.age != undefined)
-//   // data.filter
-// }
+function passengerClass(data) {
+  // data.filter(passenger => passenger.age != undefined)
+  // data.filter
+  const fields = data.map(passenger => passenger.fields)
+  
+}
 
