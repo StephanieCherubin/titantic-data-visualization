@@ -13,9 +13,12 @@ function handleData(data) {
   console.log(`The first passenger was a part of the ${fields[0].pclass} class.`)
   console.log(`Did the first passenger survive? ${fields[0].survived}`)
   console.log(fields[0].age) // returns undefined
+  
   totalAmount(fields)
   survivorCount(fields)
-  // age(fields)
+  passengerClass(fields)
+
+
 }
 
 // How many total passengers?
@@ -36,11 +39,25 @@ function survivorCount(data) {
   console.log(`How many died? ${data.length - count}`);
 }
 
+//   TODO: Loop over the list and look for each unique value
+// TODO: You can use an object or a set for this
+const pclasses = new Set()
+const pc = {}
 
-function passengerClass(data) {
-  // data.filter(passenger => passenger.age != undefined)
-  // data.filter
-  const fields = data.map(passenger => passenger.fields)
-  
+function passengerClass(data){
+  for (let passenger = 0; passenger < data.length; passenger++) {
+    
+    
+  }
+  console.log(`The classes of passengers are ${data[passenger].pclass}`);
 }
+  
+
+
+
+const arrayofPC = Object.keys(pc) // Get array of keys (method 2)
+console.log(pclasses)
+console.log(arrayofPC)
+console.log(pc)
+
 
