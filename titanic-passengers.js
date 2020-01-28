@@ -3,10 +3,11 @@
 fetch('titanic-passengers.json')
     .then(res => res.json())
     .then(json => handleData(json))
-    .catch(err => console.log(err.message))
+    .catch(err => console.error(err.message))
 
 function handleData(data) {
   const fields = data.map(passenger => passenger.fields)
+  console.log(data)
 
   console.log(`The name of the first passenger is ${fields[0].name}`)
   console.log(`The fare of the first passenger is ${fields[0].fare}`)
@@ -18,7 +19,15 @@ function handleData(data) {
   survivorCount(fields)
   passengerClass(fields)
 
+  fields.forEach( passenger => {
+    const el = document.createElement('div')
+    content.appendChild(el)
+    el.style.backgroundColor = 'blue'
+  });
 
+  // el.style.backgroundColor = passenger.sex === 'male' ? 'cornflowerblue' : 'pink'
+  // el.style.borderRadius = passenger.survived === 'No' ? '50%' : 'none'
+  el.style.backgroundColor = passenger.survived === 'Yes' ? 'green' : 'pink'
 }
 
 // How many total passengers?
