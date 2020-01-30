@@ -12,3 +12,8 @@ h1, h3 {
 .embarked {
   width: 48%; float:right;margin-left: 10px;
 }
+
+.graph {
+  display: flex;
+  flex-wrap: wrap;
+}

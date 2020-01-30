@@ -36,25 +36,40 @@ function handleData(data) {
   fields.forEach( passenger => {
     const el = document.createElement('div')
     sex.appendChild(el)
+    
+   fields.sort((a, b) => {
+     return a.sex === 'male'? -1: 1
+   })
 
-    el.style.position = 'relative'
-    el.style.width = '0'
-    el.style.height = '0'
-    el.style.borderLeft = '10px solid transparent'
-    el.style.borderRight = '10px solid transparent'
-    el.style.borderBottom = '20px solid'
-    el.style.margin = '1px'
-    el.style.margin = '1px';
-    el.style.borderBottom = passenger.sex === 'female' ? '20px solid hotpink' : '20px solid blue'
-  });
+  // fields.filter() 
 
+  el.style.position = 'relative'
+  el.style.width = '0'
+  el.style.height = '0'
+  el.style.borderLeft = '10px solid transparent'
+  el.style.borderRight = '10px solid transparent'
+  el.style.borderBottom = '20px solid'
+  el.style.margin = '1px'
+  el.style.margin = '1px';
+  el.style.borderBottom = passenger.sex === 'female' ? '20px solid hotpink' : '20px solid blue'
+});
+
+
+  
   //embarked
-  fields.forEach( passenger => {
+  fields.forEach( (passenger) => {
       const el = document.createElement('div')
       embarked.appendChild(el)
 
+      fields.sort((a, b) => {
+        return a.embarked === 'S'? -1: 1
+      })
+      fields.sort((a, b) => {
+        return a.embarked === 'Q'? -1: 1
+      })
+
       el.style.width = '20px'
-      el.style.height = '20px'
+      el.style.height = '5px'
       el.style.borderRadius = '40%';
       el.style.margin = '1px';
 
@@ -64,16 +79,44 @@ function handleData(data) {
         el.style.borderTop = '15px solid #008f11'
       } else if (passenger.embarked === 'C'){
         el.style.borderTop = '15px solid #00ff41'
-      }else {
+      } else {
         el.style.borderTop = '15px solid #b2dda5'
       }
     });
 
-  survived.style.display = 'flex'
-  survived.style.flexWrap = 'wrap'
-  sex.style.display = 'flex'
-  sex.style.flexWrap = 'wrap'
-  embarked.style.display = 'flex'
-  embarked.style.flexWrap = 'wrap'
+  //pclass
+  fields.forEach( passenger => {
+    const el = document.createElement('div')
+    pclass.appendChild(el)
+    
+    fields.sort((a, b) => {
+      return a.pclass === '1'? -1: 1
+    })
+    fields.sort((a, b) => {
+      return a.pclass === '2'? -1: 1
+    })
 
+    el.style.position = 'relative'
+    el.style.width = '20px'
+    el.style.height = '20px'
+    el.style.margin = '2px'
+    el.style.borderTopLeftRadius = '50%'
+    el.style.borderBottomRightRadius = '50%'
+
+    if (passenger.pclass === 3) {
+      el.style.backgroundColor = 'yellow'
+    } else if (passenger.pclass === 2) {
+      el.style.backgroundColor = 'orange'
+    } else {
+      el.style.backgroundColor = 'white'
+    }
+
+    
+    
+  });
+
+  // survived.style.flexWrap = 'wrap'
+  // sex.style.flexWrap = 'wrap'
+  // embarked.style.flexWrap = 'wrap'
+  // pclass.style.flexWrap = 'wrap'
 }
