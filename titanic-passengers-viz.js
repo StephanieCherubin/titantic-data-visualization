@@ -17,13 +17,13 @@ function handleData(data) {
   // sibling amount
 
   // survived
+  fields.sort((a, b) => {
+    return a.survived === 'Yes'?  -1 : 1
+  })
+
   fields.forEach( passenger => {
     const el = document.createElement('div')
     survived.appendChild(el)
-
-    fields.sort((a, b) => {
-      return a.survived === 'Yes'? -1: 1
-    })
 
     el.style.position = 'relative'
     el.style.width = '20px'
@@ -37,15 +37,19 @@ function handleData(data) {
   });
 
   // sex
+  fields.sort((a, b) => {
+    return a.sex === 'male'? -1: 1
+  })
+
   fields.forEach( passenger => {
     const el = document.createElement('div')
     sex.appendChild(el)
     
-   fields.sort((a, b) => {
-     return a.sex === 'male'? -1: 1
-   })
 
   // fields.filter() 
+//   Filters out the falsy values in an array.
+// const filterFalsy = arr => arr.filter(Boolean);
+// filterFalsy(['', true, {}, false, 'sample', 1, 0]);
 
   el.style.position = 'relative'
   el.style.width = '0'
@@ -61,16 +65,18 @@ function handleData(data) {
 
   
   //embarked
+  fields.sort((a, b) => {
+    return a.embarked === 'S'? -1: 1
+  })
+  fields.sort((a, b) => {
+    return a.embarked === 'Q'? -1: 1
+  })
+  
   fields.forEach( (passenger) => {
       const el = document.createElement('div')
       embarked.appendChild(el)
 
-      fields.sort((a, b) => {
-        return a.embarked === 'S'? -1: 1
-      })
-      fields.sort((a, b) => {
-        return a.embarked === 'Q'? -1: 1
-      })
+      
 
       el.style.width = '20px'
       el.style.height = '5px'
@@ -119,8 +125,4 @@ function handleData(data) {
     
   });
 
-  // survived.style.flexWrap = 'wrap'
-  // sex.style.flexWrap = 'wrap'
-  // embarked.style.flexWrap = 'wrap'
-  // pclass.style.flexWrap = 'wrap'
 }

@@ -3,7 +3,7 @@ body {
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
-h1, h3 {
+h1, h3, label{
   color:white;
 }
 .sex {
@@ -13,7 +13,31 @@ h1, h3 {
   width: 48%; float:right;margin-left: 10px;
 }
 
-.graph {
+.graph, #show-gender, #show-embarked, #show-survived,#main {
   display: flex;
   flex-wrap: wrap;
+  margin: 10px;
+}
+
+.legend {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+#survivors {
+  background-color: red;
+}
+
+#casualties {
+  background-color: gray;
+}
+
+#buttons{
+  padding-top: 20px;
+}
+
+.button-selected {
+  background-color: white;
+  color: black;
 }
