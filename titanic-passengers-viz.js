@@ -21,6 +21,10 @@ function handleData(data) {
     const el = document.createElement('div')
     survived.appendChild(el)
 
+    fields.sort((a, b) => {
+      return a.survived === 'Yes'? -1: 1
+    })
+
     el.style.position = 'relative'
     el.style.width = '20px'
     el.style.height = '20px'
