@@ -1,12 +1,12 @@
 const passengerDiv = document.getElementById('main')
 const buttonGender = document.getElementById('show-gender')
-const buttonEmbarked = document.getElementById('show-embarked')
+const buttonEmbarkedLocation = document.getElementById('show-embarked-location')
 
 const elements = []
 const passengerData = []
 
 let showGender = false
-let showEmbarked = false 
+let showEmbarkedLocation = false 
 let showSurvived = false
 
 fetch('titanic-passengers.json')
@@ -60,6 +60,41 @@ fetch('titanic-passengers.json')
         }
       })
 
+      //embarked location
+      buttonEmbarkedLocation.addEventListener('click', (e) => {
+        showEmbarkedLocation = !showEmbarkedLocation
+        if (showEmbarkedLocation) {
+          e.target.style.backgroundColor = 'white'
+          e.target.style.color = 'black'
+          e.target.classList.add('button-selected')
+      
+          passengerData.forEach((passenger, i) => {
+            
+            if (passenger.embarked === 'Q') {
+              elements[i].style.backgroundColor='black'
+              elements[i].style.borderBottom = '5px solid #003b00'
+            } else if (passenger.embarked === 'S') {
+              elements[i].style.backgroundColor='black'
+              elements[i].style.borderBottom = '5px solid #008f11'
+            } else if (passenger.embarked === 'C'){
+              elements[i].style.backgroundColor='black'
+              elements[i].style.borderBottom = '5px solid #00ff41'
+            } else {
+              elements[i].style.backgroundColor='black'
+              elements[i].style.borderBottom = '5px solid #b2dda5'
+            }
+          })
+          document.getElementById('show-embarked-location').innerHTML = 'Reset'
+        } else {
+          e.target.classList.remove('button-selected')
+     
+          passengerData.forEach((passenger, i) => {
+            elements[i].style.borderBottom= "5px solid gray"
+            elements[i].style.backgroundColor='gray'
+          })
+          document.getElementById('show-embarked-location').innerHTML = 'Show Embarked Location'
+        }
+      })
       // function selectButton(el, state) {
       //   if (state == true) {
       //     if (el.sex === 'male') {
