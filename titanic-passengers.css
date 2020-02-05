@@ -33,11 +33,21 @@ h1, h3, label{
   background-color: gray;
 }
 
-#buttons{
+#button-div{
   padding-top: 20px;
+}
+
+button {
+  padding: 5px;
+  border-radius: 5px;
+}
+button:hover {
+  color: white;
+  background-color: gray;
 }
 
 .button-selected {
   background-color: white;
   color: black;
 }
+
