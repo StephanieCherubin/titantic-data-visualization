@@ -57,7 +57,6 @@ function handleData(data) {
   el.style.borderLeft = '10px solid transparent'
   el.style.borderRight = '10px solid transparent'
   el.style.borderBottom = '20px solid'
-  el.style.margin = '1px'
   el.style.margin = '1px';
   el.style.borderBottom = passenger.sex === 'female' ? '20px solid hotpink' : '20px solid blue'
 });
