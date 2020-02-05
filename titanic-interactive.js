@@ -24,12 +24,14 @@ fetch('titanic-passengers.json')
           elements.push(el)             // store the element
           passengerData.push(passenger) // Store the passenger
       
-          el.style.width = '14px'
-          el.style.height = '14px'
+          el.style.position = 'relative'
+          el.style.width = '10px'
+          el.style.height = '10px'
+          el.style.borderLeft = '10px solid transparent'
+          el.style.borderRight = '10px solid transparent'
           el.style.backgroundColor = 'gray'
           el.style.margin = '1.5px'
           el.style.transition = '3s'
-          el.style.boxSizing = 'border-box'
         });
 
         // console.log(data);
@@ -49,8 +51,6 @@ fetch('titanic-passengers.json')
           })
           document.getElementById('show-gender').innerHTML = 'Reset'
         } else {
-          e.target.style.backgroundColor = 'black'
-          e.target.style.color = 'white'
           e.target.classList.remove('button-selected')
           // selectButton(e.target, showGender)
           passengerData.forEach((passenger, i) => {
