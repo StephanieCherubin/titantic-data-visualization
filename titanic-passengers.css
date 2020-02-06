@@ -2,10 +2,11 @@ body {
   margin: 50px;
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
-h1, h3, label{
+/* h1, h3, label{
   color:white;
-}
+} */
 .sex {
   width: 48%; float:left;margin-right:10px;
 }
@@ -13,10 +14,14 @@ h1, h3, label{
   width: 48%; float:right;margin-left: 10px;
 }
 
-.graph, #show-gender, #show-embarked-location, #show-survived,#main {
+.graph, #show-gender, #show-embarked-location, #show-survived,#main{
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
+}
+
+div#main:hover{
+  cursor: pointer;
 }
 
 .legend {
@@ -42,6 +47,7 @@ button {
   border-radius: 5px;
 }
 button:hover {
+  cursor: pointer;
   color: white;
   background-color: gray;
 }
@@ -51,3 +57,7 @@ button:hover {
   color: black;
 }
 
+#passenger-info{
+  font-weight: bold;
+  padding: 5px;
+}
