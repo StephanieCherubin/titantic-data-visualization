@@ -54,9 +54,11 @@ const pclasses = new Set()
 const pc = {}
 
 function passengerClass(data){
+  count = 0
   for (let passenger = 0; passenger < data.length; passenger++) {
-    
-    
+    if (data[passenger].pclass === ) {
+      
+    }
   }
   console.log(`The classes of passengers are ${data[passenger].pclass}`);
 }
