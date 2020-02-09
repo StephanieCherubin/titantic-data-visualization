@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Titantic Passengers</title>
-  <link rel="stylesheet" href="titanic-passengers.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titantic Passengers</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"">
+    <link rel="stylesheet" 
+    href="titanic-passengers.css">
 </head>
 <body>
   <h1 >Titantic Visualizations</h1>
   
-  <label>
-    Survivors 
-    <span class="legend" id="survivors"></span>
-    Casualties
-    <span class="legend" id="casualties"></span> 
-  </label>
-
+  
   <h3>Did they survive?</h3>
+      <label>
+          <span class="legend" id="survivors"></span>
+        Survivors 
+        <span class="legend" id="casualties"></span> 
+        Casualties
+      </label>
   <div id="survived" class="graph"></div>
 
   <div class="sex">
     <h3>Male vs Female</h3>
+    
+    <label>
+        <span class="legend" id="male"></span> 
+        Male 
+        <span class="legend" id="female"></span> 
+        Female
+     </label>
+      
     <div id="sex" class="graph"></div>
+    
   </div>
 
   <div class="embarked">
     <h3>Port of Embarkation</h3>
+    <label>
+        <span class="legend" id="southampton"></span> 
+        🇮🇪 Queensland (Cobh), Ireland 
+        <span class="legend" id="cherbourg"></span> 
+        | 🇫🇷 Cherbourg, France
+        </br>
+        <span class="legend" id="queensland"></span> 
+        🇬🇧 Southampton, England 
+        <span class="legend" id="unknown"></span> 
+        | 🏳️ Unknown
+     </label>
     <div id="embarked" class="graph"></div>
   </div>
 
