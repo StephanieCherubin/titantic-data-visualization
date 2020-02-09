@@ -65,31 +65,32 @@ function handleData(data) {
   
   //embarked
   fields.sort((a, b) => {
+    return a.embarked === 'Q'? -1: 1
+  })
+  fields.sort((a, b) => {
     return a.embarked === 'S'? -1: 1
   })
   fields.sort((a, b) => {
-    return a.embarked === 'Q'? -1: 1
+    return a.embarked === 'C'? -1: 1
   })
   
   fields.forEach( (passenger) => {
       const el = document.createElement('div')
       embarked.appendChild(el)
 
-      
-
-      el.style.width = '20px'
-      el.style.height = '5px'
+      el.style.width = '20px';
+      el.style.height = '5px';
       el.style.borderRadius = '40%';
       el.style.margin = '1px';
 
       if (passenger.embarked === 'Q') {
-        el.style.borderTop = '15px solid #003b00'
-      } else if (passenger.embarked === 'S') {
-        el.style.borderTop = '15px solid #008f11'
-      } else if (passenger.embarked === 'C'){
-        el.style.borderTop = '15px solid #00ff41'
+        el.style.borderTop = '15px solid white'
+      } else if (passenger.embarked === 'C') {
+        el.style.borderTop = '15px solid green'
+      } else if (passenger.embarked === 'S'){
+        el.style.borderTop = '15px solid blue'
       } else {
-        el.style.borderTop = '15px solid #b2dda5'
+        el.style.borderTop = '15px solid purple'
       }
     });
 
