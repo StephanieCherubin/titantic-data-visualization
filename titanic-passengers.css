@@ -26,16 +26,36 @@ div#main:hover{
 
 .legend {
   display: inline-block;
-  height: 12px;
-  width: 12px;
+  
 }
 
 #survivors {
-  background-color: red;
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 50%;
 }
 
 #casualties {
-  background-color: gray;
+    height: 15px;
+    width: 15px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+#male {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid blue;
+}
+#female{
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid hotpink;
 }
 
 #button-div{
