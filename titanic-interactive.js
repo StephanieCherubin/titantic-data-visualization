@@ -22,13 +22,6 @@ body.addEventListener('click',  (e) => {
   
 })
 
-// passenger.addEventListener('mouseover', (e) => {
-//   const index = e.target.dataset.index
-//   if (index === undefined) {
-//     showOverlay(index)
-//   }
-// })
-
 fetch('titanic-passengers.json')
       .then(res => res.json())
       .then(json => {
